@@ -7,6 +7,42 @@
 
 import UIKit
 
+class AppData {
+    static var students = [
+        Student(name: "Billy", nickname: "Bill", smartness: .tardy),
+        Student(name: "Bobby", nickname: "Bob", smartness: .absent),
+        Student(name: "Brian", nickname: "Ian", smartness: .present),
+        Student(name: "Brianna", nickname: "Bri", smartness: .present),
+        Student(name: "Brooklyn", nickname: "Brooke", smartness: .tardy)
+    ]
+    
+    static var indexToEdit = 0
+}
+
+enum Attendance: Int, CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .absent: return "Present"
+        case .tardy: return "Tardy"
+        case .present: return "Absent"
+        }
+    }
+    
+    case present = 0, tardy = 1, absent = 2
+}
+
+class Student {
+    let name: String
+    let nickname: String
+    let smartness: Attendance
+    
+    init(name: String, nickname: String, smartness: Attendance) {
+        self.name = name
+        self.nickname = nickname
+        self.smartness = smartness
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
