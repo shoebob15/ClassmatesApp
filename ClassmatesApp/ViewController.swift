@@ -28,18 +28,18 @@ enum Attendance: Int, CustomStringConvertible {
         }
     }
     
-    case present = 0, tardy = 1, absent = 2
+    case present = 2, tardy = 1, absent = 0
 }
 
 class Student {
     let name: String
     let nickname: String
-    let smartness: Attendance
+    let attendance: Attendance
     
     init(name: String, nickname: String, smartness: Attendance) {
         self.name = name
         self.nickname = nickname
-        self.smartness = smartness
+        self.attendance = smartness
     }
 }
 

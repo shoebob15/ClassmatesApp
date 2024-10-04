@@ -45,6 +45,12 @@ class ListViewController: UIViewController {
         ])
         sortMenu.showsMenuAsPrimaryAction = true
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        updateLabels()
+    }
 
     @IBAction func moveLeft(_ sender: UIButton) {
         if currentIndex <= 0 {
@@ -77,7 +83,7 @@ class ListViewController: UIViewController {
             AppData.students.sort(by: {$0.nickname < $1.nickname})
             break
         case .attendance:
-            AppData.students.sort(by: {$0.smartness.rawValue < $1.smartness.rawValue})
+            AppData.students.sort(by: {$0.attendance.rawValue < $1.attendance.rawValue})
             break
         }
         
@@ -92,6 +98,6 @@ class ListViewController: UIViewController {
         
         nicknameLabel.text = "Nickname: \(AppData.students[self.currentIndex].nickname)"
         
-        smartnessLabel.text = "Attendance: \(AppData.students[self.currentIndex].smartness.description)"
+        smartnessLabel.text = "Attendance: \(AppData.students[self.currentIndex].attendance.description)"
     }
 }

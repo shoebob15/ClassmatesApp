@@ -17,12 +17,18 @@ class EditViewController: UIViewController {
         
         nameTextField.text = AppData.students[AppData.indexToEdit].name
         nicknameTextField.text = AppData.students[AppData.indexToEdit].nickname
-        attendanceSegmented.selectedSegmentIndex = AppData.students[AppData.indexToEdit].smartness.rawValue
+        attendanceSegmented.selectedSegmentIndex = AppData.students[AppData.indexToEdit].attendance.rawValue
 
     }
     
     @IBAction func saveAction(_ sender: UIButton) {
+        AppData.students[AppData.indexToEdit] = Student(name: nameTextField.text!, nickname: nicknameTextField.text!, smartness: Attendance(rawValue: attendanceSegmented.selectedSegmentIndex)!)
         
+        self.presentingViewController?.dismiss(animated: true)
+    }
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        self.presentingViewController?.dismiss(animated: true)
     }
     
     @IBAction func attendanceAction(_ sender: UISegmentedControl) {

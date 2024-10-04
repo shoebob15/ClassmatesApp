@@ -40,6 +40,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="zcK-rE-i8q" kind="show" id="uMm-e5-Rkk"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3xW-PQ-Zkj">
                                 <rect key="frame" x="153" y="518" width="86" height="62"/>
@@ -62,6 +65,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="3.5211267605633805"/>
+        </scene>
+        <!--Quiz View Controller-->
+        <scene sceneID="Ppb-01-pUr">
+            <objects>
+                <viewController id="zcK-rE-i8q" customClass="QuizViewController" customModule="ClassmatesApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lDb-iU-jfo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is this student's NICKNAME?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yew-3g-Xbm">
+                                <rect key="frame" x="16" y="220" width="361" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nickname" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bll-bO-nBj">
+                                <rect key="frame" x="115" y="301" width="162" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nY-fO-7rR">
+                                <rect key="frame" x="81" y="453" width="126" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Submit" cornerStyle="medium">
+                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitAction:" destination="zcK-rE-i8q" eventType="touchUpInside" id="X2o-U0-3Dl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xp3-Mf-wOt">
+                                <rect key="frame" x="215" y="453" width="96" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Skip" cornerStyle="medium">
+                                    <color key="baseBackgroundColor" systemColor="systemPinkColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="skipAction:" destination="zcK-rE-i8q" eventType="touchUpInside" id="jbV-EU-ucG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVY-pa-8cP">
+                                <rect key="frame" x="16" y="176" width="361" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="EOr-BR-tAk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DK8-1h-0Ub"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="vVY-pa-8cP" id="vGK-Mx-L2W"/>
+                        <outlet property="nicknameTextField" destination="Bll-bO-nBj" id="wuO-ja-VYH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lyD-cg-6EW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820.6106870229007" y="738.73239436619724"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="2pM-xT-veP">
@@ -235,8 +304,17 @@
                                     <action selector="attendanceAction:" destination="jWI-s0-P6H" eventType="valueChanged" id="bJT-k3-rTM"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-2h-hFb">
+                                <rect key="frame" x="293" y="44" width="57" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="keyboard.chevron.compact.down.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="keyboardButton:" destination="jWI-s0-P6H" eventType="touchUpInside" id="s92-EQ-54t"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lB0-KH-cFX">
-                                <rect key="frame" x="126" y="665" width="140" height="83"/>
+                                <rect key="frame" x="183" y="671" width="140" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
@@ -245,13 +323,14 @@
                                     <action selector="saveAction:" destination="jWI-s0-P6H" eventType="touchUpInside" id="Det-70-sNS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nbQ-2h-hFb">
-                                <rect key="frame" x="293" y="44" width="57" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkA-Lw-IGV">
+                                <rect key="frame" x="69" y="671" width="106" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="keyboard.chevron.compact.down.fill" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="filled" image="arrowshape.turn.up.backward.fill" catalog="system" title="Back" cornerStyle="medium"/>
                                 <connections>
-                                    <action selector="keyboardButton:" destination="jWI-s0-P6H" eventType="touchUpInside" id="s92-EQ-54t"/>
+                                    <action selector="backAction:" destination="jWI-s0-P6H" eventType="touchUpInside" id="bkB-99-izk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -290,6 +369,7 @@
     <resources>
         <image name="arrowshape.left.fill" catalog="system" width="128" height="104"/>
         <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.turn.up.backward.fill" catalog="system" width="128" height="104"/>
         <image name="keyboard.chevron.compact.down.fill" catalog="system" width="128" height="100"/>
         <image name="pencil.and.list.clipboard" catalog="system" width="114" height="128"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
