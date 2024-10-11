@@ -9,11 +9,13 @@ import UIKit
 
 class AppData {
     static var students = [
-        Student(name: "Billy", nickname: "Bill", smartness: .tardy),
-        Student(name: "Bobby", nickname: "Bob", smartness: .absent),
-        Student(name: "Brian", nickname: "Ian", smartness: .present),
-        Student(name: "Brianna", nickname: "Bri", smartness: .present),
-        Student(name: "Brooklyn", nickname: "Brooke", smartness: .tardy)
+        Student(name: "Cam", nickname: "Chef Cam", smartness: .tardy),
+        Student(name: "Ryan", nickname: "Rat Ryan", smartness: .absent),
+        Student(name: "Ava", nickname: "No Pickle Noftz", smartness: .present),
+        Student(name: "Ava", nickname: "ABBA Ava", smartness: .present),
+        Student(name: "Evan", nickname: "Flutin' Evan", smartness: .tardy),
+        Student(name: "Justin", nickname: "Trustin' Justin", smartness: .present),
+        Student(name: "Jayden", nickname: "Join Jayden", smartness: .absent)
     ]
     
     static var indexToEdit = 0
